@@ -1,0 +1,29 @@
+.white {
+  background-image: url("../images/bg-login-top.png");
+  height: 100%;
+  width: 100%;
+  padding: 1em 2em; }
+  .white .logo {
+    padding-top: 20%;
+    padding-left: 40%; }
+
+.black {
+  background-image: url("../images/bg-login.png");
+  height: 100%;
+  width: 100;
+  padding: 2em 2em; }
+  .black .login-form {
+    margin-left: 50%; }
+    .black .login-form p {
+      display: inline-block; }
+    .black .login-form .input-container {
+      text-align: left;
+      margin: 0 auto;
+      color: white;
+      padding-bottom: 1em;
+      display: block; }
+    .black .login-form input {
+      padding: 0.5em;
+      border-radius: 0.5em; }
+    .black .login-form button {
+      margin-left: 30%; }
