@@ -1,19 +1,23 @@
 'use strict';
+$(document).ready(function(){
+	var $registerForm = $('#registerForm');
+	var $email = $('#email');
+	var $password = $('#pass');
+	var $error = $('#error');
+	var $submit = $('#submit');
 
-var userName = $('.userName');
-var passWord = $('.passWord');
-var butt = $('.butt');
-var login = [];
-
-butt.on('submit', check);
-
-var pass1 = ['aaron@theironyard.com' , 'password123'];
-var pass2 = ['admin@google.com' , 'pandas'];
-
-function check(e){
+$registerForm.submit(function(e){
 	e.preventDefault();
-	login.push(userName.val());
-	login.push(passWord.val());
+	if(email.val() === 'aaron@theironyard.com' && password.val() === 'password123' || email.val() === 'admin@google.com' && password.val() === 'pandas' || email.val() === 'admin@google.com' && password.val() === 'honeycrisp'){
+		window.location.replace('http://www.theironyard.com');
 
-}
+	}
+	else{
+		error.text('your username and or password are invalid');
+	}
+
+	});
+
+});
+	
 

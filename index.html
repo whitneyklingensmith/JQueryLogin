@@ -5,26 +5,26 @@
 	<link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
 </head>
 <body>
-	<div class="white"> 
+	<form id = "registerForm">
+	<section class="white"> 
 		<img src="/images/treemoLabs-logo.png" class="logo" />
-	</div>
-	<div class="black">
+	</section>
+	<section class="black">
 		<div class="innerBox">
-			<form class="login-form">
-				<label class="input-container">
-					<p>Username</p>
-					<input type="email" class="userName"></input>
-					<div id="userError"></div>
-				</label>
+				<div class="input-container">
+					<label>Username</label>
+					<input id = "email" type="text" class="required email" validType="email" minlength ="1"></input>
+					<div class="error username "></div>
+				</div>
 				
-				<label class="input-container">
-					<p>Password</p>
-					<input type="text" class="passWord"></input>
-					<div id="passError"></div>
-				</label>
-				<button class="butt"><strong>Sign In</strong></button>
+				<div class="input-container">
+					<label>Password</label>
+					<input id = "pass" type="text" class="required" minlength ="1"></input>
+					<div class="error password"></div>
+				</div>
+				<button id="submit"><strong>Sign In</strong></button>
 			</form>
-		</div>
+		</section>
 	</div>
 
 <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
