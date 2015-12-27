@@ -1,22 +1,26 @@
 .white{
 	background-image:url('../images/bg-login-top.png');
-	height:100%;
-	width:100%;
-	padding:1em 2em;
+	height:35em;
 	.logo{
-		padding-top:12%;
-		padding-left:37%;
+		margin: 0 auto;
+		padding: 0;
+		text-align:center;
+		padding-top: 24em;
 	}
 
 }
 .black{
 	background-image:url('../images/bg-login.png');
-	height:100%;
-	width:100%;
-	padding-bottom:10em;
-	padding-top:0.5em;
+	height:30em;
+	color:white;
+	margin:0 auto;
+	text-align:center;
+	padding-top:1em;
+	border-top: solid #5E5F5B .5em;
+	
 	form{
-		margin-left:40%;
+		margin-left: 3.2em;
+		margin-bottom: 1em;
 
 		label{
 			display:inline-block;
@@ -31,18 +35,26 @@
 
 		}
 		input{
-			padding-top:2em;
-			padding-left:7em;
-			border-radius:0.5em;
+			border: none;
+			height: 2em;
+			margin-left: 3em;
+			width: 20em;
+			border-radius: 6px;
+			padding: 1em;
+			outline: none;
+			font-size: 1em;
 		}
 		button{
-			font-family: sans-serif;
-			margin-left:23%;
-			background-color:#649214;
-			color:white;
-			border-radius:0.6em;
-			padding:0.5em 1.3em;
-			text-align:center;
+			display: block;
+			background: -webkit-linear-gradient(top, #95C73E , #4D9907 );
+			margin: 0 auto;
+			color: white;
+			border: none;
+			border-radius: 6px;
+			width: 10em;
+			margin-top: 1em;
+			padding: 1em;
+			outline: none;
 			font-size: 1em;
 		}
 
@@ -50,17 +62,12 @@
 		
 		
 }
-.eu{
-	color:red;
-	
-		.inu{
-			@extend .eu;
-		.ep{
-			@extend .eu;
-		.inp{
-			@extend .eu;
-		}
+#error{
+		color: white;
+		margin: 0 auto;
+		text-align: center;
 	}
+}
 }
 }
 
