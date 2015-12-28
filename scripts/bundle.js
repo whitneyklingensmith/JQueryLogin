@@ -2,8 +2,6 @@
 'use strict';
 $(document).ready(function () {
 	var $registerForm = $('#registerForm');
-	var $submit = $('#submit');
-
 	$(registerForm).submit(function (e) {
 		e.preventDefault();
 		var email = $('#email').val();
