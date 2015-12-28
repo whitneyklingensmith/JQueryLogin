@@ -2,18 +2,30 @@
 'use strict';
 $(document).ready(function () {
 	var $registerForm = $('#registerForm');
-	var $email = $('#email');
-	var $password = $('#pass');
-	var $error = $('#error');
 	var $submit = $('#submit');
 
-	$("registerForm").submit(function (e) {
+	$(registerForm).submit(function (e) {
 		e.preventDefault();
-		if (email.val() === 'aaron@theironyard.com' && password.val() === 'password123' || email.val() === 'admin@google.com' && password.val() === 'pandas' || email.val() === 'admin@google.com' && password.val() === 'honeycrisp') {
-			window.location.replace('http://www.theironyard.com');
+		var email = $('#email').val();
+		var password = $('#pass').val();
+		var error = $('#error').html(' ');
+		var hasError = false;
+
+		if (email === 'aaron@theironyard.com' || email === 'admin@google.com') {
+			error.hide();
+			hasError = false;
+		} else if (password === 'password123' || password === 'honeycrisp' || password === 'pandas') {
+			error.hide();
+			hasError = false;
+		} else if (email !== 'aaron@theironyard.com' || email !== 'admin@google.com') {
+			error.html('Trying to get in with a wrong username. Get outttttaaaa here');
+			hasError = true;
+		} else if (password !== 'honeycrisp' || password !== 'pandas' || password !== 'password123') {
+			error.html('Your password is a fake');
+			hasError = true;
 		} else {
-			error.text('your username and or password are invalid');
-			error.show();
+			hasError = false;
+			window.location = 'http://www.theironyard.com';
 		}
 	});
 });
