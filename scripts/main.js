@@ -1,31 +1,35 @@
 'use strict';
 $(document).ready(function(){
-	var submit = $('#submit');
-	var registerForm = $('#registerForm');
-registerForm.on("submit",function(e){
+var form = $('#registerForm');
+var email = $('#email');
+var password = $('#pass');
+form.submit(function(e){
 	e.preventDefault();
-	var email = $('#email').val();
-	var password = $('#pass').val();
-	var error = $('#error').html(' ');
-	var hasError = false;
+	var users = [
+		{email: 'aaron@theironyard.com', password: 'password123'},
+		{email: 'admin@google.com', password: 'pandas'},
+		{email: 'cool@test.com', password: 'honeycrisp'}
+	];
+	var emailString = email.val();
+	var passwordString = password.val();
+	$('.error').text(' ');
+	var userFound = false;
 	
-	
-	 if(email !== 'aaron@theironyard.com' || email !== 'admin@google.com'){
-		error.html('Trying to get in with a wrong username. Get outttttaaaa here');
-		error.show();
+	if(emailString < 1 || passwordString < 1){
+	 	$('error.empty').text('You have to enter something ya dingus');
+	 	return;
+	 }
+	users.forEach(function(user, index){
+		if(user.email ===  emailString && user.password === passwordString){
+			userFound = true;
+		}
+	});
 		
+	if(userFound) {
+			window.location = 'http://theironyard.com';
 	}
-	else if(password !== 'honeycrisp' || password !== 'pandas' || password !== 'password123'){
-		error.html('Your password is a fake');
-		error.show;
-		
-	}
-	else if('input' === " "){
-		error.html('Thought you could just not fill anything out ya dingus');
-	}
-	else if(email === 'aaron@theironyard.com' && password === 'password123' || email === 'admin@google.com' && password === 'pandas' || email === 'admin@google.com' && password === 'honeycrisp'){
-		registerForm.hide();
-		window.location.replace = ('http://www.theironyard.com/home.html').show();
+	else{
+		$('.error.wrong').text('username and or password are wrongo');
 	}
 
 	});
