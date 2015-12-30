@@ -2,7 +2,7 @@
 $(document).ready(function(){
 	var submit = $('#submit');
 	var registerForm = $('#registerForm');
-registerForm.submit(function(e){
+registerForm.on("submit",function(e){
 	e.preventDefault();
 	var email = $('#email').val();
 	var password = $('#pass').val();
